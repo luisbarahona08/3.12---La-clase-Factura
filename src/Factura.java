@@ -9,14 +9,12 @@ public class Factura {
         this.numeroPieza = numeroPieza;
         this.descripcionPieza = descripcionPieza;
 
-        // Validacion de cantidad positiva
         if (cantidad > 0) {
             this.cantidad = cantidad;
         } else {
             this.cantidad = 0;
         }
 
-        // Validacion de precio positivo
         if (precioPorArticulo > 0.0) {
             this.precioPorArticulo = precioPorArticulo;
         } else {
@@ -24,7 +22,48 @@ public class Factura {
         }
     }
 
-    // Metodo para calcular el monto total de la factura
+    // Métodos establecer (setters) y obtener (getters)
+    public void establecerNumeroPieza(String numeroPieza) {
+        this.numeroPieza = numeroPieza;
+    }
+
+    public String obtenerNumeroPieza() {
+        return numeroPieza;
+    }
+
+    public void establecerDescripcionPieza(String descripcionPieza) {
+        this.descripcionPieza = descripcionPieza;
+    }
+
+    public String obtenerDescripcionPieza() {
+        return descripcionPieza;
+    }
+
+    public void establecerCantidad(int cantidad) {
+        if (cantidad > 0) {
+            this.cantidad = cantidad;
+        } else {
+            this.cantidad = 0;
+        }
+    }
+
+    public int obtenerCantidad() {
+        return cantidad;
+    }
+
+    public void establecerPrecioPorArticulo(double precioPorArticulo) {
+        if (precioPorArticulo > 0.0) {
+            this.precioPorArticulo = precioPorArticulo;
+        } else {
+            this.precioPorArticulo = 0.0;
+        }
+    }
+
+    public double obtenerPrecioPorArticulo() {
+        return precioPorArticulo;
+    }
+
+    // Método para calcular el monto total de la factura
     public double obtenerMontoFactura() {
         return cantidad * precioPorArticulo;
     }
